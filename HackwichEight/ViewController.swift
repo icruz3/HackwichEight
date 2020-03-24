@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         currentValue = lroundf(slider.value)
-        targetValue = Int.random(in: 0...100)
+        
     }
     
     @IBAction func guessNumberPressed(_ sender: Any) {
@@ -40,8 +40,12 @@ class ViewController: UIViewController {
         
        print("the value of the slider is:\(slider.value)")
     
+    
     currentValue = lroundf(slider.value)
-
+        func startNewRound() {
+            targetValue = Int.random(in: 0...100)
+            currentValue = lroundf(slider.value)
+        }
         
     }
     
