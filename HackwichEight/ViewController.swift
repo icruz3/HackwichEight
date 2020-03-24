@@ -13,14 +13,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     
     var currentValue: Int = 0
+    var targetValue: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        currentValue = lroundf(slider.value)
+        targetValue = Int.random(in: 0...100)
     }
-
     
     @IBAction func guessNumberPressed(_ sender: Any) {
+        
+        _ = "The Value is: \(currentValue)" + "\nThe target value is: \(targetValue)"
         
         let alert = UIAlertController(title: "Hello World", message: "this is my first alert view", preferredStyle: .alert)
         
